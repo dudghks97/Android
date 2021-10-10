@@ -29,16 +29,18 @@ public class MainActivity extends Activity {
                 String s_num2 = edit_num2.getText().toString();
 
                 if (s_num1.length() <= 0 || s_num2.length() <= 0) {
-                    Toast.makeText(getApplicationContext(), "빈칸이 존재합니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "빈칸이 존재합니다.",
+                            Toast.LENGTH_SHORT).show();
                 }
                 else if (radiogroup.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(getApplicationContext(), "연산이 선택되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "연산이 선택되지 않았습니다.",
+                            Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Double num1 = Double.valueOf(s_num1);
                     Double num2 = Double.valueOf(s_num2);
 
-                    Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                    Intent intent = new Intent(MainActivity.this, CalcActivity.class);
                     intent.putExtra("NUM1", num1);
                     intent.putExtra("NUM2", num2);
                     startActivityForResult(intent, GET_RESULT);
@@ -58,22 +60,27 @@ public class MainActivity extends Activity {
                 switch(radiogroup.getCheckedRadioButtonId()){
                     case R.id.add:
                         result = data.getDoubleExtra("ADD", 0);
-                        Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), String.valueOf(result),
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.sub:
                         result = data.getDoubleExtra("SUB", 0);
-                        Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), String.valueOf(result),
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.mul:
                         result = data.getDoubleExtra("MUL", 0);
-                        Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), String.valueOf(result),
+                                Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.div:
                         result = data.getDoubleExtra("DIV", 0);
-                        Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), String.valueOf(result),
+                                Toast.LENGTH_SHORT).show();
                         break;
                     default:
-                        Toast.makeText(getApplicationContext(), "계산 실패!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "계산 실패!",
+                                Toast.LENGTH_SHORT).show();
                         break;
                 }
             }

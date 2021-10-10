@@ -12,6 +12,7 @@
         android:id="@+id/edit_num1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="정수 입력">
     </EditText>
 
@@ -19,6 +20,7 @@
         android:id="@+id/edit_num2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="정수 입력">
     </EditText>
 
@@ -58,7 +60,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="계산하기"
-        android:onClick="OnClick"
         android:background="@android:color/darker_gray">
     </Button>
 </LinearLayout>
